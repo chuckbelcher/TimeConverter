@@ -58,6 +58,8 @@ struct ContentView: View {
                         Text(userOutputUnit)
                     }
                     .font(.title)
+                } header: {
+                    Text("Resuilts")
                 }
             }
             .navigationTitle("Time Conversion")
