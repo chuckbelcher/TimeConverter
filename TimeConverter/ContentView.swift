@@ -55,7 +55,9 @@ struct ContentView: View {
                 Section {
                     HStack {
                         Text("\(conversionValue)")
+                            .foregroundColor(.blue)
                         Text(userOutputUnit)
+                            .opacity(0.40)
                     }
                     .font(.title)
                 } header: {
