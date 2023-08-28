@@ -32,6 +32,22 @@ struct ContentView: View {
         }
         return baseUnit
     }
+    var resultValue: Int {
+        var result: Int
+        
+        switch userOutputUnit {
+        case "Days":
+            result = conversionValue / 86400
+        case "Hours":
+            result = conversionValue / 3600
+        case "Minutes":
+            result = conversionValue / 60
+        default:
+            result = conversionValue
+        }
+        
+        return result
+    }
     
     var body: some View {
         NavigationView {
@@ -65,7 +81,7 @@ struct ContentView: View {
                 
                 Section {
                     HStack {
-                        Text("\(conversionValue)")
+                        Text("\(resultValue)")
                             .foregroundColor(.blue)
                         Text(userOutputUnit)
                             .opacity(0.40)
