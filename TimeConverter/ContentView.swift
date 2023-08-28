@@ -18,8 +18,19 @@ struct ContentView: View {
     
     let userOptions = ["Days", "Hours", "Minutes", "Seconds"]
     var conversionValue: Int {
-        //Compute conversion amount here
-        return 0
+        var baseUnit: Int
+        
+        switch userInputUnit {
+        case "Days":
+            baseUnit = userInput * 86400
+        case "Hours":
+            baseUnit = userInput * 3600
+        case "Minutes":
+            baseUnit = userInput * 60
+        default:
+            baseUnit = userInput
+        }
+        return baseUnit
     }
     
     var body: some View {
